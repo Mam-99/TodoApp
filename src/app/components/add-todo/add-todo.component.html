@@ -1,0 +1,17 @@
+<div class="w-3/5 ml-auto mr-auto border p-5 rounded shadow-md">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="flex gap-6 w-full items-center">
+        <div class="flex flex-col w-2/5">
+            <label for="name" class="mb-2">Name</label>
+            <input type="text" id="name" formControlName="name" class="border rounded p-2 text-sm">
+        </div>
+
+        <div class="flex flex-col w-2/5">
+            <label for="description" class="mb-2">Desctiption</label>
+            <input type="text" id="description" formControlName="description" class="border rounded p-2 text-sm">
+        </div>
+
+        <div class="w-1/5 text-right">
+            <button class="rounded border px-3 py-2 text-sm hover:bg-gray-50" type="submit">Add Todo</button>
+        </div>
+    </form>
+</div>

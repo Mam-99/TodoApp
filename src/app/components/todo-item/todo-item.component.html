@@ -1,0 +1,20 @@
+<div class="flex justify-between items-center border rounded p-4 shadow">
+    <div *ngIf="!completed">
+        <h2 class="font-bold text-xl mb-1">{{ name }}</h2>
+        <p class="text-sm">{{ description }}</p>
+    </div>
+
+    <div *ngIf="completed">
+        <h2 class="font-bold text-xl line-through text-gray-400 mb-1">{{ name }}</h2>
+        <p class="line-through text-gray-400 text-sm">{{ description }}</p>
+    </div>
+
+    <div *ngIf="!completed">
+        <button (click)="completeTodo()" class="border rounded w-24 text-xs py-1 mr-2 text-lime-500 border-lime-500 hover:bg-gray-50">Complete</button>
+        <button (click)="deleteTodo()" class="border rounded w-24 text-xs py-1 text-red-500 border-red-500 hover:bg-gray-50">Delete</button>
+    </div>
+
+    <div *ngIf="completed">
+        <button (click)="deleteTodo()" class="border rounded w-24 text-xs py-1 text-red-500 border-red-500 hover:bg-gray-50">Delete</button>
+    </div>
+</div>
