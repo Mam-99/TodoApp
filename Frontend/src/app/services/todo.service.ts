@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../models/todo.model';
+import { HttpClient } from '@angular/common/http';
+import { enviroment } from '../../enviroments/enviroment.prod';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
 
+  private apiUrl = enviroment.apiUrl;
+
   myTodoList: Todo[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   createNewTodo(todo: Todo) {
     this.myTodoList.push(todo);
@@ -27,5 +32,9 @@ export class TodoService {
     if(todoUpdate) {
       todoUpdate.completed = true;
     }
+  }
+
+  get(path: String): Observable<any> {
+    return this.http.get<any>(this.apiUrl + path);
   }
 }

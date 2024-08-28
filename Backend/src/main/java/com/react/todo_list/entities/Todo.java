@@ -19,5 +19,6 @@ public class Todo {
 
     private String description;
 
+    
     private boolean status;
 }
