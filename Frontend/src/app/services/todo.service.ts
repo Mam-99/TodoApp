@@ -37,4 +37,16 @@ export class TodoService {
   get(path: String): Observable<any> {
     return this.http.get<any>(this.apiUrl + path);
   }
+
+  post(path: String, data?: any): Observable<any> {
+    return this.http.post(this.apiUrl + path, data);
+  }
+
+  put(path: String, data?: any): Observable<any> {
+    return this.http.put(this.apiUrl + path, data);
+  }
+
+  delete(path: String, data?: any): Observable<any> {
+    return this.http.delete(this.apiUrl + path, data);
+  }
 }
